@@ -12,8 +12,13 @@
                     'ngrok-skip-browser-warning': 'true'
                 }
             })
-            .then(response => response.text())
-            .then(data => window.location.href = 'https://ff81-2405-201-5007-5239-752e-c5fe-fc71-baf9.ngrok-free.app/')
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = 'https://ff81-2405-201-5007-5239-752e-c5fe-fc71-baf9.ngrok-free.app/';
+                } else {
+                    console.error('Error:', response.statusText);
+                }
+            })
             .catch(error => console.error('Error:', error));
         });
     </script>
