@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bypass ngrok Warning</title>
+</head>
+<body>
+    <a href="https://your-shortio-link" id="bypass-link">Go to My Site</a>
+
+    <script>
+        document.getElementById('bypass-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            fetch('https://ff81-2405-201-5007-5239-752e-c5fe-fc71-baf9.ngrok-free.app/', {
+                method: 'GET',
+                headers: {
+                    'ngrok-skip-browser-warning': 'true'
+                }
+            })
+            .then(response => response.text())
+            .then(data => window.location.href = 'https://ff81-2405-201-5007-5239-752e-c5fe-fc71-baf9.ngrok-free.app/')
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
