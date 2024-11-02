@@ -4,11 +4,8 @@
     <title>Bypass ngrok Warning</title>
 </head>
 <body>
-    <a href="https://your-shortio-link" id="bypass-link">Go to My Site</a>
-
     <script>
-        document.getElementById('bypass-link').addEventListener('click', function(event) {
-            event.preventDefault();
+        window.addEventListener('load', function() {
             fetch('https://ff81-2405-201-5007-5239-752e-c5fe-fc71-baf9.ngrok-free.app/', {
                 method: 'GET',
                 headers: {
