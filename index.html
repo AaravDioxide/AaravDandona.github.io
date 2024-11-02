@@ -8,16 +8,13 @@
         window.addEventListener('load', function() {
             fetch('https://ff81-2405-201-5007-5239-752e-c5fe-fc71-baf9.ngrok-free.app/', {
                 method: 'GET',
+                mode: 'no-cors',
                 headers: {
                     'ngrok-skip-browser-warning': 'true'
                 }
             })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = 'https://ff81-2405-201-5007-5239-752e-c5fe-fc71-baf9.ngrok-free.app/';
-                } else {
-                    console.error('Error:', response.statusText);
-                }
+            .then(() => {
+                window.location.href = 'https://ff81-2405-201-5007-5239-752e-c5fe-fc71-baf9.ngrok-free.app/';
             })
             .catch(error => console.error('Error:', error));
         });
